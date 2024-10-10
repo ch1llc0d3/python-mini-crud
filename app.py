@@ -14,6 +14,14 @@ def cargar_datos():
         print("Datos cargados exitosamente.")
     else:
         print("No se encuentran datos.")
+    
+
+def guardar_datos():
+    # Lógica para guardar los datos en un archivo
+    with open('productos.txt', 'w') as file:
+        for producto in productos:
+            file.write(f"{producto['nombre']},{producto['precio']},{producto['cantidad']}\n")
+            
     pass
 
 def añadir_producto():
@@ -32,9 +40,7 @@ def eliminar_producto():
     # Lógica para eliminar un producto
     pass
 
-def guardar_datos():
-    # Lógica para guardar los datos en un archivo
-    pass
+
 
 
 def menu():
