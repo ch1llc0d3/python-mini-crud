@@ -1,3 +1,6 @@
+import os 
+
+# Lista de productos completa
 productos = []
 
 def añadir_producto():
