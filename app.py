@@ -55,13 +55,13 @@ def actualizar_producto():
             print("3. Actualizar cantidad")
             opcion = input("Elige una opcion para modificar los datos: ")
 
-            if opcion = '1':
+            if opcion == '1':
                 nuevo_nombre = input("Escribe un nuevo nombre: ")
                 productos[indice]['nombre'] = nuevo_nombre
-            elif opcion = '2':
+            elif opcion == '2':
                 nuevo_precio = input("Escribe un nuevo precio: ")
                 productos[indice]['precio'] = nuevo_precio
-            elif opcion = '3':                 
+            elif opcion == '3':                 
                 nueva_cantidad = input("Escribe una nueva cantidad")
                 productos[indice]['cantidad'] = nueva_cantidad
             else:
