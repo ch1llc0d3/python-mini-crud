@@ -23,7 +23,8 @@ Objetivos específicos:
 
     Persistir los datos de productos en un archivo.
 
-3. Problema: Sistema de Gestión de Productos
+
+## 3. Problema: Sistema de Gestión de Productos
 
 Imagina que estás desarrollando un sistema básico de gestión de inventario de productos. Este sistema debe permitir a los usuarios realizar las siguientes operaciones:
 
@@ -37,9 +38,8 @@ Imagina que estás desarrollando un sistema básico de gestión de inventario de
 
     Guardar los datos en un archivo: Los datos de los productos deben ser persistidos en un archivo productos.txt y cargados al inicio del programa.
 
-## Requerimientos Específicos
-
-El código base del sistema sería algo similar a:
+ 
+ Requerimientos Específicos
 
 productos = []
 
@@ -62,11 +62,11 @@ def eliminar_producto():
 def guardar_datos():
     # Lógica para guardar los datos en un archivo
     pass
-
+    
 def cargar_datos():
     # Lógica para cargar los datos desde un archivo
     pass
-
+    
 def menu():
     while True:
         print("1: Añadir producto")
@@ -74,7 +74,7 @@ def menu():
         print("3: Actualizar producto")
         print("4: Eliminar producto")
         print("5: Guardar datos y salir")
-
+        
         opcion = input("Selecciona una opción: ")
 
         if opcion == '1':
