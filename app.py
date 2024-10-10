@@ -56,10 +56,14 @@ def actualizar_producto():
             opcion = input("Elige una opcion para modificar los datos: ")
 
             if opcion = '1':
+                nuevo_nombre = input("Escribe un nuevo nombre: ")
                 
             elif opcion = '2':
-                
-            elif opcion = '3': 
+                nuevo_precio = input("Escribe un nuevo precio: ")
+
+            elif opcion = '3':                 
+                nueva_cantidad = input("Escribe una nueva cantidad")
+
                 
 def eliminar_producto():
     # Lógica para eliminar un producto
