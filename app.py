@@ -73,7 +73,16 @@ def actualizar_producto():
             
 def eliminar_producto():
     # Lógica para eliminar un producto
-    pass
+    ver_productos()
+    try:
+        indice = int(input("Selecciona el numero del producto que necesitas actualizar: ")) - 1
+        if 0 <= indice < len(productos):    
+            eliminado = productos.pop(indice)
+            print(f"El producto '{eliminado['nombre']}' fue eliminado exitosamente")
+        else: 
+            print("Numero de producto no valido")
+    except ValueError:
+        print("Error: Los datos introducidos no son validos")
 
 
 
