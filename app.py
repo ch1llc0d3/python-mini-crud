@@ -21,12 +21,19 @@ def guardar_datos():
     with open('productos.txt', 'w') as file:
         for producto in productos:
             file.write(f"{producto['nombre']},{producto['precio']},{producto['cantidad']}\n")
-            
-    pass
+            print("Datos guardados exitosamente.")
 
 def añadir_producto():
     # Lógica para añadir un producto
-    pass
+    nombre = input("Escribe el nombre del product: ")
+    try:
+        precio = float(input("Escribe el precio del producto: "))
+        cantidad = int(input("Escribe la cantidad del producto: "))
+        productos.append({'nombre': nombre, 'precio': precio, 'cantidad': cantidad})
+        print(f"Producto '{nombre} anhadido correctamente.")
+    except ValueError:
+            print("Error: Los datos introducidos no son validos.")
+    
 
 def ver_productos():
     # Lógica para ver todos los productos
