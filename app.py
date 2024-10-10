@@ -35,6 +35,7 @@ def añadir_producto():
             print("Error: Los datos introducidos no son validos.")
     
 
+
 def ver_productos():
     # Lógica para ver todos los productos
     if not productos:
@@ -45,8 +46,21 @@ def ver_productos():
 
 def actualizar_producto():
     # Lógica para actualizar un producto
-    pass
+    ver_productos()
+    try:
+        indice = int(input("Selecciona el numero del producto que necesitas actualizar: ")) - 1
+        if 0 <= indice < len(productos):
+            print("1. Actualizar nombre")
+            print("2. Actualizar precio")
+            print("3. Actualizar cantidad")
+            opcion = input("Elige una opcion para modificar los datos: ")
 
+            if opcion = '1':
+                
+            elif opcion = '2':
+                
+            elif opcion = '3': 
+                
 def eliminar_producto():
     # Lógica para eliminar un producto
     pass
