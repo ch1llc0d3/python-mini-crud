@@ -13,7 +13,13 @@ def cargar_datos():
                 productos.appent({'nombre': nombre, 'precio': float(precio), cantidad: int(cantidad)})
         print("Datos cargados exitosamente.")
     else:
-        print("No se encuentran datos.")
+        print("""    
+                ▄  ▗▖▄▀▀▚▖▄  ▗▖    
+                █  ▐▌█  ▐▌█  ▐▌    
+                ▀▀▀▜▌█  ▐▌▀▀▀▜▌    
+                   ▐▌▀▄▄▞▘   ▐▌         
+              No se encuentran datos.
+              """)
     
 
 def guardar_datos():
@@ -32,7 +38,15 @@ def añadir_producto():
         productos.append({'nombre': nombre, 'precio': precio, 'cantidad': cantidad})
         print(f"Producto '{nombre} anhadido correctamente.")
     except ValueError:
-            print("Error: Los datos introducidos no son validos.")
+            print("""                                      
+                        .d88b. 888d888888d888 .d88b. 888d888 
+                        d8P  Y8b888P"  888P"  d88""88b888P"   
+                        88888888888    888    888  888888     
+                        Y8b.    888    888    Y88..88P888     
+                        "Y8888 888    888     "Y88P" 888 :  \n    
+                                      
+                        Los datos introducidos no son validos.
+                        """)
     
 
 
@@ -67,10 +81,23 @@ def actualizar_producto():
             else:
                 print("Opcion no valida")
         else: 
-            print("El numero de producto no es valido")
+            print("""                                      
+                        .d88b. 888d888888d888 .d88b. 888d888 
+                        d8P  Y8b888P"  888P"  d88""88b888P"   
+                        88888888888    888    888  888888     
+                        Y8b.    888    888    Y88..88P888     
+                        "Y8888 888    888     "Y88P" 888 :  \n                 
+                        El numero del producto no es valido.
+            """)    
     except ValueError:
-            print("Error: Los datos introducidos no son validos")
-            
+        print("""                                      
+                        .d88b. 888d888888d888 .d88b. 888d888 
+                        d8P  Y8b888P"  888P"  d88""88b888P"   
+                        88888888888    888    888  888888     
+                        Y8b.    888    888    Y88..88P888     
+                        "Y8888 888    888     "Y88P" 888 :  \n                 
+                        Los datos introducidos no son validos.
+            """)
 def eliminar_producto():
     # Lógica para eliminar un producto
     ver_productos()
@@ -82,18 +109,23 @@ def eliminar_producto():
         else: 
             print("Numero de producto no valido")
     except ValueError:
-        print("Error: Los datos introducidos no son validos")
-
-
+        print("""                                      
+                        .d88b. 888d888888d888 .d88b. 888d888 
+                        d8P  Y8b888P"  888P"  d88""88b888P"   
+                        88888888888    888    888  888888     
+                        Y8b.    888    888    Y88..88P888     
+                        "Y8888 888    888     "Y88P" 888 :  \n                 
+                        Los datos introducidos no son validos.
+            """)
 
 
 def menu():
     while True:
-        print("1: Añadir producto")
-        print("2: Ver productos")
-        print("3: Actualizar producto")
-        print("4: Eliminar producto")
-        print("5: Guardar datos y salir")
+        print("1: Añadir producto\n")
+        print("2: Ver productos\n")
+        print("3: Actualizar producto\n")
+        print("4: Eliminar producto\n")
+        print("5: Guardar datos y salir\n")
 
         opcion = input("Selecciona una opción: ")
 
@@ -109,6 +141,7 @@ def menu():
             guardar_datos()
             break
         else:
-            print("Por favor, selecciona una opción válida.")
+            print("¯\(°_o)/¯   Por favor, selecciona una opción válida")
 
  
+menu()
