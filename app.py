@@ -57,13 +57,13 @@ def actualizar_producto():
 
             if opcion = '1':
                 nuevo_nombre = input("Escribe un nuevo nombre: ")
-                
+                productos[indice]['nombre'] = nuevo_nombre
             elif opcion = '2':
                 nuevo_precio = input("Escribe un nuevo precio: ")
-
+                productos[indice]['precio'] = nuevo_precio
             elif opcion = '3':                 
                 nueva_cantidad = input("Escribe una nueva cantidad")
-
+                productos[indice]['cantidad'] = nueva_cantidad
                 
 def eliminar_producto():
     # Lógica para eliminar un producto
