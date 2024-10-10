@@ -3,6 +3,19 @@ import os
 # Lista de productos completa
 productos = []
 
+
+def cargar_datos():
+    # Lógica para cargar los datos desde un archivo
+    if os.path.exists('productos.txt'):
+        with open('productos.txt', 'r') as file:
+            for linea in file:
+                nombre, precio, cantidad = linea.strip().split(',')
+                productos.appent({'nombre': nombre, 'precio': float(precio), cantidad: int(cantidad)})
+        print("Datos cargados exitosamente.")
+    else:
+        print("No se encuentran datos.")
+    pass
+
 def añadir_producto():
     # Lógica para añadir un producto
     pass
@@ -23,9 +36,6 @@ def guardar_datos():
     # Lógica para guardar los datos en un archivo
     pass
 
-def cargar_datos():
-    # Lógica para cargar los datos desde un archivo
-    pass
 
 def menu():
     while True:
