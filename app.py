@@ -37,7 +37,11 @@ def añadir_producto():
 
 def ver_productos():
     # Lógica para ver todos los productos
-    pass
+    if not productos:
+        print("No tenemos productos en stock.")
+    else:
+        for i, producto in enumerate(productos, start=1):
+            print(f"{i}. {producto['nombre']} - Precio: {producto['precio']} - Cantidad: {producto['cantidad']}")
 
 def actualizar_producto():
     # Lógica para actualizar un producto
