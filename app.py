@@ -64,7 +64,13 @@ def actualizar_producto():
             elif opcion = '3':                 
                 nueva_cantidad = input("Escribe una nueva cantidad")
                 productos[indice]['cantidad'] = nueva_cantidad
-                
+            else:
+                print("Opcion no valida")
+        else: 
+            print("El numero de producto no es valido")
+    except ValueError:
+            print("Error: Los datos introducidos no son validos")
+            
 def eliminar_producto():
     # Lógica para eliminar un producto
     pass
