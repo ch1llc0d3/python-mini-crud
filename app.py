@@ -141,7 +141,7 @@ def menu():
             guardar_datos()
             break
         else:
-            print("¯\(°_o)/¯   Por favor, selecciona una opción válida")
+            print("Por favor, selecciona una opción válida")
 
  
 menu()
