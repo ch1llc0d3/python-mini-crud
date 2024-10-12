@@ -10,7 +10,7 @@ def cargar_datos():
         with open('productos.txt', 'r') as file:
             for linea in file:
                 nombre, precio, cantidad = linea.strip().split(',')
-                productos.appent({'nombre': nombre, 'precio': float(precio), cantidad: int(cantidad)})
+                productos.append({'nombre': nombre, 'precio': float(precio), cantidad: int(cantidad)})
         print("Datos cargados exitosamente.")
     else:
         print("""    
