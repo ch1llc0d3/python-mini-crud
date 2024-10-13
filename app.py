@@ -9,8 +9,11 @@ def cargar_datos():
     if os.path.exists('productos.txt'):
         with open('productos.txt', 'r') as file:
             for linea in file:
-                nombre, precio, cantidad = linea.strip().split(',')
-                productos.append({'nombre': nombre, 'precio': float(precio), cantidad: int(cantidad)})
+                try:
+                    nombre, precio, cantidad = linea.strip().split(',')
+                    productos.append({'nombre': nombre, 'precio': float(precio), cantidad: int(cantidad)})
+                except ValueError:
+                    print(f"Error: linea mal formateada: {linea}")
         print("Datos cargados exitosamente.")
     else:
         print("""    
@@ -35,7 +38,7 @@ def añadir_producto():
     try:
         precio = float(input("Escribe el precio del producto: "))
         cantidad = int(input("Escribe la cantidad del producto: "))
-        productos.append({'nombre': nombre, 'precio': precio, 'cantidad': cantidad})
+        productos.append({'nombre': nombre, 'precio': float(precio), 'cantidad': int(cantidad)})
         print(f"Producto '{nombre} anhadido correctamente.")
     except ValueError:
             print("""                                      
