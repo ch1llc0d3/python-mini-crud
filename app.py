@@ -39,7 +39,7 @@ def añadir_producto():
         precio = float(input("Escribe el precio del producto: "))
         cantidad = int(input("Escribe la cantidad del producto: "))
         productos.append({'nombre': nombre, 'precio': float(precio), 'cantidad': int(cantidad)})
-        print(f"Producto '{nombre} anhadido correctamente.")
+        print(f"Producto {nombre} anhadido correctamente.")
     except ValueError:
             print("""                                      
                         .d88b. 888d888888d888 .d88b. 888d888 
@@ -59,7 +59,11 @@ def ver_productos():
         print("No tenemos productos en stock.")
     else:
         for i, producto in enumerate(productos, start=1):
-            print(f"{i}. {producto['nombre']} - Precio: {producto['precio']} - Cantidad: {producto['cantidad']}")
+            if all(key in producto for key in ['nombre','precio', 'cantidad']):         
+                print(f"{i}. {producto['nombre']} - Precio: {producto['precio']} - Cantidad: {producto['cantidad']}")
+            else:
+                print(f"Error: El producto {producto['nombre']} no tiene cantidad.")
+
 
 def actualizar_producto():
     # Lógica para actualizar un producto
