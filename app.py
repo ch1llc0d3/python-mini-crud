@@ -120,6 +120,7 @@ def eliminar_producto():
 
 
 def menu():
+    cargar_datos()
     while True:
         print("1: Añadir producto\n")
         print("2: Ver productos\n")
