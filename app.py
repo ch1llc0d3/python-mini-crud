@@ -3,16 +3,29 @@ import os
 # Lista de productos completa
 productos = []
 
-# Mensajes de error reutilizables 
-def mensaje_error(mensaje):
-    print("""                                      
-            .d88b. 888d888888d888 .d88b. 888d888 
-            d8P  Y8b888P"  888P"  d88""88b888P"   
-            88888888888    888    888  888888     
-            Y8b.    888    888    Y88..88P888     
-            "Y8888 888    888     "Y88P" 888 :  \n    
-            {mensaje}
-        """)
+# Item
+class Producto:
+    def __init__(self, id, nombre, precio, cantidad):
+        self.id = id
+        self.nombre = nombre
+        self.precio = precio
+        self.cantidad = cantidad 
+        
+class RegistroProducto: 
+    def __init__(self):
+        self.productos = []
+        self.cargar_datos()
+
+    # Mensajes de error reutilizables 
+    def mensaje_error(mensaje):
+        print("""                                      
+                .d88b. 888d888888d888 .d88b. 888d888 
+                d8P  Y8b888P"  888P"  d88""88b888P"   
+                88888888888    888    888  888888     
+                Y8b.    888    888    Y88..88P888     
+                "Y8888 888    888     "Y88P" 888 :  \n    
+                {mensaje}
+            """)
 
 #cargar datos
 def cargar_datos():
