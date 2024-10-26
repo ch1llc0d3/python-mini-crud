@@ -1,7 +1,5 @@
 import os 
 
-# Lista de productos completa
-productos = []
 
 # Item
 class Producto:
@@ -51,16 +49,19 @@ class RegistroProducto:
                 file.write(f"{producto.id},{producto.name},{producto.precio},{producto.cantidad}\n")
                 print("Datos guardados exitosamente.")
 
-    def añadir_producto():
+    # add producto
+    def añadir_producto(self):
         # Lógica para añadir un producto
         nombre = input("Escribe el nombre del product: ")
         try:
             precio = float(input("Escribe el precio del producto: "))
             cantidad = int(input("Escribe la cantidad del producto: "))
-            productos.append({'nombre': nombre, 'precio': float(precio), 'cantidad': int(cantidad)})
+            nuevo_id = len(self.productos) + 1
+            producto = Producto(nuevo_id, nombre, precio, cantidad)
+            self.productos.append(producto)
             print(f"Producto {nombre} anhadido correctamente.")
         except ValueError:
-                mensaje_error("Los datos introducidos no son validos...")
+                self.mensaje_error("Los datos introducidos no son validos...")
         
 
 
