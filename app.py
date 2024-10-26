@@ -65,21 +65,19 @@ class RegistroProducto:
         
 
 
-    def ver_productos():
+    def ver_productos(self):
         # Lógica para ver todos los productos
-        if not productos:
+        if not self.productos:
             print("No tenemos productos en stock.")
         else:
-            for i, producto in enumerate(productos, start=1):
-                if all(key in producto for key in ['nombre','precio', 'cantidad']):         
-                    print(f"{i}. {producto['nombre']} - Precio: {producto['precio']} - Cantidad: {producto['cantidad']}")
-                else:
-                    print(f"Error: El producto {producto['nombre']} no tiene cantidad.")
+            print("Lista de productos:")
+            for producto in self.productos:
+                print(f"ID: {producto.id} - Nombre {producto.nombre} - Precio: {producto.precio} - Cantidad: {producto.cantidad}")
 
 
-    def actualizar_producto():
+    def actualizar_producto(self):
         # Lógica para actualizar un producto
-        ver_productos()
+        self.ver_productos()
         try:
             indice = int(input("Selecciona el numero del producto que necesitas actualizar: ")) - 1
             if 0 <= indice < len(productos):
