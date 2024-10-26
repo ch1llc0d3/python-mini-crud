@@ -117,8 +117,8 @@ class RegistroProducto:
 
 
     # Menu Principal
-    def menu():
-        cargar_datos()
+    def menu(self):
+        self.cargar_datos()
         while True:
             print("\n--- Menu Principal ---")
             print("1: Añadir producto\n")
@@ -130,18 +130,21 @@ class RegistroProducto:
             opcion = input("Selecciona una opción: ")
 
             if opcion == '1':
-                añadir_producto()
+                self.añadir_producto()
             elif opcion == '2':
-                ver_productos()
+                self.ver_productos()
             elif opcion == '3':
-                actualizar_producto()
+                self.actualizar_producto()
             elif opcion == '4':
-                eliminar_producto()
+                self.eliminar_producto()
             elif opcion == '5':
-                guardar_datos()
+                self.guardar_datos()
+                print("Nos vemos pronto")
                 break
             else:
                 print("Por favor, selecciona una opción válida")
 
     
-    menu()
+# Ejecucion del programa 
+registro = RegistroProducto()
+registro.menu()
