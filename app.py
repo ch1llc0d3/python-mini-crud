@@ -30,6 +30,7 @@ def cargar_datos():
         print("No se encuentran datos...")
     
 
+# Guardar datos en un archivo
 def guardar_datos():
     # Lógica para guardar los datos en un archivo
     with open('productos.txt', 'w') as file:
@@ -46,15 +47,7 @@ def añadir_producto():
         productos.append({'nombre': nombre, 'precio': float(precio), 'cantidad': int(cantidad)})
         print(f"Producto {nombre} anhadido correctamente.")
     except ValueError:
-            print("""                                      
-                        .d88b. 888d888888d888 .d88b. 888d888 
-                        d8P  Y8b888P"  888P"  d88""88b888P"   
-                        88888888888    888    888  888888     
-                        Y8b.    888    888    Y88..88P888     
-                        "Y8888 888    888     "Y88P" 888 :  \n    
-                                      
-                        Los datos introducidos no son validos.
-                        """)
+            mensaje_error("Los datos introducidos no son validos...")
     
 
 
@@ -93,23 +86,11 @@ def actualizar_producto():
             else:
                 print("Opcion no valida")
         else: 
-            print("""                                      
-                        .d88b. 888d888888d888 .d88b. 888d888 
-                        d8P  Y8b888P"  888P"  d88""88b888P"   
-                        88888888888    888    888  888888     
-                        Y8b.    888    888    Y88..88P888     
-                        "Y8888 888    888     "Y88P" 888 :  \n                 
-                        El numero del producto no es valido.
-            """)    
+            mensaje_error("Numero de producto no valido...")
     except ValueError:
-        print("""                                      
-                        .d88b. 888d888888d888 .d88b. 888d888 
-                        d8P  Y8b888P"  888P"  d88""88b888P"   
-                        88888888888    888    888  888888     
-                        Y8b.    888    888    Y88..88P888     
-                        "Y8888 888    888     "Y88P" 888 :  \n                 
-                        Los datos introducidos no son validos.
-            """)
+        mensaje_error("Los datos introducidos no son validos...")
+
+
 def eliminar_producto():
     # Lógica para eliminar un producto
     ver_productos()
@@ -119,21 +100,15 @@ def eliminar_producto():
             eliminado = productos.pop(indice)
             print(f"El producto '{eliminado['nombre']}' fue eliminado exitosamente")
         else: 
-            print("Numero de producto no valido")
+            mensaje_error("Numero de producto no valido...")
     except ValueError:
-        print("""                                      
-                        .d88b. 888d888888d888 .d88b. 888d888 
-                        d8P  Y8b888P"  888P"  d88""88b888P"   
-                        88888888888    888    888  888888     
-                        Y8b.    888    888    Y88..88P888     
-                        "Y8888 888    888     "Y88P" 888 :  \n                 
-                        Los datos introducidos no son validos.
-            """)
+        mensaje_error("Datos introducidos no son validos...")
 
 
 def menu():
     cargar_datos()
     while True:
+        print("\n--- Menu Principal ---")
         print("1: Añadir producto\n")
         print("2: Ver productos\n")
         print("3: Actualizar producto\n")
