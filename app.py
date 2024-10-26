@@ -79,28 +79,26 @@ class RegistroProducto:
         # Lógica para actualizar un producto
         self.ver_productos()
         try:
-            indice = int(input("Selecciona el numero del producto que necesitas actualizar: ")) - 1
-            if 0 <= indice < len(productos):
+            id_product = int(input("Selecciona el ID del producto a actualizar: "))
+            producto = next((p for p in self.product if p.id == id_product), None)
+            if producto:
                 print("1. Actualizar nombre")
                 print("2. Actualizar precio")
                 print("3. Actualizar cantidad")
                 opcion = input("Elige una opcion para modificar los datos: ")
 
                 if opcion == '1':
-                    nuevo_nombre = input("Escribe un nuevo nombre: ")
-                    productos[indice]['nombre'] = nuevo_nombre
+                    producto.nombre = input("Escribe un nuevo nombre: ")
                 elif opcion == '2':
-                    nuevo_precio = float(input("Escribe un nuevo precio: "))
-                    productos[indice]['precio'] = nuevo_precio
+                    producto.precio = float(input("Escribe un nuevo precio: "))
                 elif opcion == '3':                 
-                    nueva_cantidad = int(input("Escribe una nueva cantidad"))
-                    productos[indice]['cantidad'] = nueva_cantidad
+                    producto.cantidad = int(input("Escribe una nueva cantidad"))
                 else:
                     print("Opcion no valida")
             else: 
-                mensaje_error("Numero de producto no valido...")
+                self.mensaje_error("Numero de producto no valido...")
         except ValueError:
-            mensaje_error("Los datos introducidos no son validos...")
+            self.mensaje_error("Los datos introducidos no son validos...")
 
 
     def eliminar_producto():
