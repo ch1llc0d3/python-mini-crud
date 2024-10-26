@@ -3,7 +3,18 @@ import os
 # Lista de productos completa
 productos = []
 
+# Mensajes de error reutilizables 
+def mensaje_error(mensaje):
+    print("""                                      
+            .d88b. 888d888888d888 .d88b. 888d888 
+            d8P  Y8b888P"  888P"  d88""88b888P"   
+            88888888888    888    888  888888     
+            Y8b.    888    888    Y88..88P888     
+            "Y8888 888    888     "Y88P" 888 :  \n    
+            {mensaje}
+        """)
 
+#cargar datos
 def cargar_datos():
     # Lógica para cargar los datos desde un archivo
     if os.path.exists('productos.txt'):
@@ -16,13 +27,7 @@ def cargar_datos():
                     print(f"Error: linea mal formateada: {linea}")
         print("Datos cargados exitosamente.")
     else:
-        print("""    
-                ▄  ▗▖▄▀▀▚▖▄  ▗▖    
-                █  ▐▌█  ▐▌█  ▐▌    
-                ▀▀▀▜▌█  ▐▌▀▀▀▜▌    
-                   ▐▌▀▄▄▞▘   ▐▌         
-              No se encuentran datos.
-              """)
+        print("No se encuentran datos...")
     
 
 def guardar_datos():
