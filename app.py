@@ -101,20 +101,22 @@ class RegistroProducto:
             self.mensaje_error("Los datos introducidos no son validos...")
 
 
-    def eliminar_producto():
+    def eliminar_producto(self):
         # Lógica para eliminar un producto
-        ver_productos()
+        self.ver_productos()
         try:
-            indice = int(input("Selecciona el numero del producto que necesitas actualizar: ")) - 1
-            if 0 <= indice < len(productos):    
-                eliminado = productos.pop(indice)
-                print(f"El producto '{eliminado['nombre']}' fue eliminado exitosamente")
+            id_product = int(input("Selecciona el ID del producto a eliminar: "))
+            producto = next((p for p in self.product if p.id == id_product), None)
+            if producto:
+                self.productos.remove(producto)
+                print(f"El producto '{producto.nombre}' fue eliminado exitosamente")
             else: 
-                mensaje_error("Numero de producto no valido...")
+                self.mensaje_error("Numero de producto no valido...")
         except ValueError:
-            mensaje_error("Datos introducidos no son validos...")
+            self.mensaje_error("Datos introducidos no son validos...")
 
 
+    # Menu Principal
     def menu():
         cargar_datos()
         while True:
