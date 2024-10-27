@@ -45,7 +45,7 @@ class RegistroProducto:
     def guardar_datos(self):
         # Lógica para guardar los datos en un archivo
         with open('productos.txt', 'w') as file:
-            for producto in productos:
+            for producto in self.productos:
                 file.write(f"{producto.id},{producto.name},{producto.precio},{producto.cantidad}\n")
                 print("Datos guardados exitosamente.")
 
