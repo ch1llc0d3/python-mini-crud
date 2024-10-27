@@ -80,7 +80,7 @@ class RegistroProducto:
         self.ver_productos()
         try:
             id_product = int(input("Selecciona el ID del producto a actualizar: "))
-            producto = next((p for p in self.product if p.id == id_product), None)
+            producto = next((p for p in self.productos if p.id == id_product), None)
             if producto:
                 print("1. Actualizar nombre")
                 print("2. Actualizar precio")
@@ -106,7 +106,7 @@ class RegistroProducto:
         self.ver_productos()
         try:
             id_product = int(input("Selecciona el ID del producto a eliminar: "))
-            producto = next((p for p in self.product if p.id == id_product), None)
+            producto = next((p for p in self.productos if p.id == id_product), None)
             if producto:
                 self.productos.remove(producto)
                 print(f"El producto '{producto.nombre}' fue eliminado exitosamente")
