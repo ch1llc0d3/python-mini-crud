@@ -46,7 +46,7 @@ class RegistroProducto:
         # Lógica para guardar los datos en un archivo
         with open('productos.txt', 'w') as file:
             for producto in self.productos:
-                file.write(f"{producto.id},{producto.name},{producto.precio},{producto.cantidad}\n")
+                file.write(f"{producto.id},{producto.nombre},{producto.precio},{producto.cantidad}\n")
                 print("Datos guardados exitosamente.")
 
     # add producto
@@ -72,7 +72,7 @@ class RegistroProducto:
         else:
             print("Lista de productos:")
             for producto in self.productos:
-                print(f"ID: {producto.id} - Nombre {producto.nombre} - Precio: {producto.precio} - Cantidad: {producto.cantidad}")
+                print(f"ID: {producto.id} - Nombre: {producto.nombre} - Precio: {producto.precio} - Cantidad: {producto.cantidad}")
 
 
     def actualizar_producto(self):
